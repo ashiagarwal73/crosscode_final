@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         questions=new boolean[16];
         mTextView=findViewById(R.id.txtTime);
         l1=findViewById(R.id.numbers);
-        final CountDownTimer countDownTimer = new CountDownTimer(1800000,1000) {
+        final CountDownTimer countDownTimer = new CountDownTimer(1200000,1000) {
             @Override
             public void onTick(long l) {
                 mTextView.setText(" "+""+String.format(FORMAT,
