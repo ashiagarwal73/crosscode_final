@@ -1,4 +1,4 @@
-package com.example.ashi.cross_code;
+package com.ashi.ashi.cross_code;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.ashi.cross_code", appContext.getPackageName());
+        assertEquals("com.example.ashi.com.ashi.com.ashi.cross_code", appContext.getPackageName());
     }
 }

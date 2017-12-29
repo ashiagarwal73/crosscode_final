@@ -1,40 +1,42 @@
-package com.example.ashi.cross_code;
+package com.ashi.ashi.cross_code;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 /**
  * Created by ashi on 25/11/17.
  */
 
-class MyAsync extends AsyncTask <String,TextView,Void>{
+class MyAsync extends AsyncTask <String,TextView,String>{
     Context context;
     TextView mText;
-    int response;
-    MyAsync(Context context,TextView mText)
+    String inserted;
+    MyAsync(Context context,TextView Text,String inserted)
     {
         this.context=context;
-        this.mText=mText;
+        mText=Text;
+        this.inserted=inserted;
+
     }
     @Override
-    protected Void doInBackground(String...  strings) {
+    protected String doInBackground(String...  strings) {
         String final_url=strings[0];
         try {
             URL preurl = new URL(final_url);
             HttpURLConnection con = (HttpURLConnection)preurl.openConnection();
             con.setRequestMethod("GET");
-             response = con.getResponseCode();
+             int response = con.getResponseCode();
             if (response==200)
             {
+                inserted="true";
                 System.out.println("Data Loaded Successfully");
-                mText.setText("Submmission succesful");
             }
         }catch (Exception ex)
         {
@@ -42,15 +44,16 @@ class MyAsync extends AsyncTask <String,TextView,Void>{
             mText.setText("Unsuccesful Submission");
             mText.setTextColor(0xFFEA0F0F);
         }
-        return null;
+        return inserted;
     }
 
     @Override
-    protected void onPostExecute(Void aVoid) {
-        if (response==200)
+    protected void onPostExecute(String s) {
+        //Toast.makeText(context, s, Toast.LENGTH_SHORT).show();
+        if(s.equals("true"))
         {
-            mText.setText("Submmission succesful");
+            //Toast.makeText(context, "Data Submitted Successfully", Toast.LENGTH_SHORT).show();
+            mText.setText("Succesful Submission!");
         }
-        super.onPostExecute(aVoid);
     }
 }

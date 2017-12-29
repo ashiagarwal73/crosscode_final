@@ -1,6 +1,5 @@
-package com.example.ashi.cross_code;
+package com.ashi.ashi.cross_code;
 
-import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.CountDownTimer;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mViewPager=(ViewPager)findViewById(R.id.viewPager);
+        mViewPager=findViewById(R.id.viewPager);
         ques.add("Across: 1) requirement to open pdf file.");
         ques.add("Down: 2) he created the internet protocol suite alongside father of internet.");
         ques.add("Down: 3) Some of your computerís memory set aside to temporarily store copied or cut information.");
@@ -291,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t4.setText(cha[i]);
+                            t4.setText(number);
                             t4.setTextOff(number);
                             t4.setChecked(false);
                         }
@@ -325,7 +324,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t5.setText(cha[i]);
+                            t5.setText(number);
                             t5.setTextOff(number);
                             t5.setChecked(false);
                         }
@@ -359,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t6.setText(cha[i]);
+                            t6.setText(number);
                             t6.setTextOff(number);
                             t6.setChecked(false);
                         }
@@ -393,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t7.setText(cha[i]);
+                            t7.setText(number);
                             t7.setTextOff(number);
                             t7.setChecked(false);
                         }
@@ -427,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t8.setText(cha[i]);
+                            t8.setText(number);
                             t8.setTextOff(number);
                             t8.setChecked(false);
                         }
@@ -461,7 +460,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t9.setText(cha[i]);
+                            t9.setText(number);
                             t9.setTextOff(number);
                             t9.setChecked(false);
                         }
@@ -495,7 +494,7 @@ public class MainActivity extends AppCompatActivity {
                             RadioButton rb =findViewById(i);
                             String number=rb.getText().toString();
                             rb.setChecked(false);
-                            t10.setText(cha[i]);
+                            t10.setText(number);
                             t10.setTextOff(number);
                             t10.setChecked(false);
                         }

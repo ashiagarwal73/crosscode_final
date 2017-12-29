@@ -1,4 +1,4 @@
-package com.example.ashi.cross_code;
+package com.ashi.ashi.cross_code;
 
 import android.content.Intent;
 import android.os.Bundle;

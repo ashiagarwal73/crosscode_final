@@ -1,4 +1,4 @@
-package com.example.ashi.cross_code;
+package com.ashi.ashi.cross_code;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -31,18 +31,18 @@ public class Login extends AppCompatActivity {
                 }
                 else
                 {
-                    if(o.equals("88552277"))
-                    {
+//                    if(o.equals(""))
+//                    {
                         Intent i = new Intent(Login.this, Rules.class);
                         Bundle b = new Bundle();
                         b.putString("name", e);
                         b.putString("sapid", p);
                         i.putExtras(b);
                         startActivity(i);
-                    }
-                    else{
-                        Toast.makeText(Login.this, "Please enter Correct otp", Toast.LENGTH_SHORT).show();
-                    }
+//                    }
+//                    else{
+//                        Toast.makeText(Login.this, "Please enter Correct otp", Toast.LENGTH_SHORT).show();
+//                    }
                 }
             }
         });

@@ -1,41 +1,42 @@
-package com.example.ashi.cross_code;
+package com.ashi.ashi.cross_code;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 
-public class result extends AppCompatActivity {
-    TextView res;
-    String e,p,time;
-    boolean[] result;
-    int counter;
+public class Rules extends AppCompatActivity {
+    Button next;
+    String e;
+    String p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
-        counter=0;
-        res=findViewById(R.id.result);
+        setContentView(R.layout.activity_rules);
         Intent in=getIntent();
-        Bundle b= in.getExtras();
-        e=b.getString("name");
-        p=b.getString("sapid");
-        time=b.getString("time");
-        result=b.getBooleanArray("result");
-        for(int j=0;j<=15;j++)
-        {
-            if(result[j]==true)
-            {
-                counter++;
+        Bundle b=in.getExtras();
+         e=b.getString("name");
+         p=b.getString("sapid");
+        next=findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(Rules.this,MainActivity.class);
+                Bundle b=new Bundle();
+                b.putString("name",e);
+                b.putString("sapid",p);
+                i.putExtras(b);
+                startActivity(i);
             }
-        }
-        MyAsync my = new MyAsync(getBaseContext(),res);
-        my.execute("http://upesacm.org/crosscode2.php?name="+e+"&sapid="+p+"&time="+time+"&score="+counter+"");
+        });
     }
+
+    @Override
     public void onBackPressed() {
-        AlertDialog.Builder b=new AlertDialog.Builder(result.this);
+        AlertDialog.Builder b=new AlertDialog.Builder(Rules.this);
         b.setTitle("End Quiz!");
         b.setMessage("Do you Really want to close the Quiz?");
         b.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
